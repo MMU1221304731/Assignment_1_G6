@@ -5,7 +5,7 @@
 \usepackage{mathptmx}
 \usepackage{enumerate}
 \usepackage[margin=0.5in]{geometry}
-
+\usepackage{lipsum}
 
 \renewcommand{\baselinestretch}{1.0}
 
@@ -22,38 +22,64 @@ YU BUI XUAN \quad 241UC24121\quad contribution2\\
 MOHAMAD SYAMEL BIN MOHAMAD KARID \quad 1221309130 \quad contribution3\\
 % Student Name4 \quad Student ID4 \quad contribution4\\
 }
-\title{Comparison of Machine Learning Methods Used for Detecting DDoS Attacks }
+\title{Comparison of Machine Learning Methods Used for Detecting DDoS Attacks in Performance and Accuracy}
 
 \begin{document}
 \maketitle
 
+
 \begin{abstract}
-     This report provides a comprehensive review about the various ways of machine learning techniques that could be used to detect DDoS attacks. Besides that, we will also find important data to determine which method is the most effective against DDoS attacks and how does it help against the threat. 
+
 \end{abstract}
 
 \section{Introduction and Problem Statement}
 
 \subsection{Introduction}
-As the world has becoming increasingly connected, the rapid evolution of network technologies have also led to cyberattacks have becoming much more common and harder to contain. One of the major threats among them are DDoS (Distributed Denial of Service) attacks, which is a method of cyberattack that affects network services by overloading a network with malicious traffic.\cite{4} Such attacks have caused major losses to even the largest companies such as Amazon in 2020. 
+As the world has become increasingly connected, the rapid evolution of network technologies has also led to cyberattacks becoming much more common and harder to contain. This includes DDoS (Distributed Denial of Service) attacks, which try to disrupt network services by overloading a network with malicious traffic (bots) and denying normal system access. \citeA{1} Such attacks can even affect and suffer the largest companies such as the online retailer and cloud service provider Amazon in 2020, where a DDoS attack was detected on its services with a recorded access rate of 2.3 Tbps, and in 2016, where a DDoS attack disrupted a major DNS infrastructure provider which caused several major networks like Twitter (X) and PayPal became inaccessible to users for 3 hours. \citeA{1} 
+
+There are several ways DDoS attacks the host system, including sending malicious traffic at a slow pace to a target (low-rate attacks), using a high amount of packets to compromise the system (high-rate) attacks, exploiting network protocol vulnerabilities to use up resources (protocol exploitation), and substituting the IP address of the victim with the attacker's (reflection-amplification). \citeA{1} 
+
+To prevent such attacks, various methods are also developed to detect, prevent and mitigate such attacks from harming the system. One such example involves machine learning as they have good performance on network anomaly detection, and it can be adapted to deal with new threats. \citeA{3}
 
 \subsection{Problem Statement}
-DDoS attacks are currently a major threat to the usability of network infrastructure. There are several ways DDoS attacks the host system, including sending malicious traffic at a slow pace to a target (low-rate attacks), using high amount of packets to compromise the system (high-rate) attacks, and exploiting network protocol vulnerabilities (protocol exploitation). \cite{1} The methods uses different ways to disrupt and affect usability of the network causing users unable to access the network normally, and creating monetary losses to the company. To prevent from such attacks, various methods are also developed to detect, prevent and mitigate such attacks from harming the system. However, the capabilities for detecting such attacks are not sufficiently advanced enough to effectively prevent such issues, due to a lack of funding. \cite{1} Despite this, new methods are developed and used to deal with this situations, which includes machine learning methods. Despite the difficulties faced on its implementation, machine learning methods is still widely used due to its strong solving performance. \cite{7}
+Researchers use several different test methods to detect DDoS attacks with machine learning. The main methods are supervised and unsupervised methods. Supervised methods involve a physical network in a lab-based environment where the attacker and the victim exist in the same network and all tests are controlled scientifically. On the flip side, unsupervised methods test the system with real-world networks. The data collected from such methods are analyzed based on their characteristics. \citeA{1}
+
+With the development of various methods available, it can be difficult to determine the best method for detecting DDoS networks for a system, as they have different needs and constraints. Furthermore, each detection scenario is different, as they do not always have the same situation and attributes as others. 
+
+This research aims to compare various machine learning models by comparing their accuracy, performance and efficiency of the models regarding detecting DDoS attacks, and determine which methods are suitable for different environments. 
 
 \section{Methodology}
 
-Currently there are several methods where machine learning can be implemented to detect DDoS attacks. One such implementation is a two phase authentication system to precisely detect and mitigate malicious network activities. There are two phases for this system to work properly. The first phase includes the use of packet filtration and classification techniques to detect incoming network packets in search for dangerous packets based on features with the use of machine learning algorithms such as Support Vector Machines (SVM) and K-Nearest Neighbours (KNN) with use of the CICDoS 2017 dataset for reference. Following that, the second phase involves a targeted restriction of the network, which it deploys tactics such as rate limiting, IP blocking and traffic redirection to stop harmful network activity caused by an DDoS attack from affecting the host system, without the need for an deactivation of the network. The two phase system will reduce the risk for DDoS attacks while maintaining the system's normal operation. Additionally, machine learning models can use the data to improve its detection systems by "learning" the data and adapt with it, which increases performance and accuracy over time to combat against evolving threats. 
+\subsection{Methods used for comparison}
 
-\cite{3} 
+\subsubsection{TPAAD}
+The TPAAD two-phase authentication system, written by Najmun Nisa, Adnan Shahid Khan, Zeeshan Ahmad, and Johari Abdullah, explains a new method that utilizes machine learning algorithms such as Support Vector Machine (SVM) and K-Nearest Neighbors (KNN) to detect DDoS attacks on Software-Defined Networks (SDNs) efficiently. The system also filters incoming packets to detect and stop malicious traffic without host deactivation and affecting normal network connectivity. \citeA{3} The detection for the system works by utilizing two different modules, which are for detecting threats and mitigating the risks. 
 
-Besides that, another method for this process includes the use of a SDN architecture to identify SDN based \cite{5} 
+The detection module continuously monitors the network to identify abnormal traffic. Then packet filtration techniques used by the mitigation module are used to split network traffic to contain and find suspicious activity with machine learning models referring to a predefined dataset (CICDoS 2017). After that, the system employs a tunnelling mechanism to block or reroute malicious traffic ensuring normal network activity is unaffected. \citeA{3}
 
-\section{Result}
+\subsubsection{Flexible SDN-Based Architecture}
+
+Low-rate DDoS attacks are more challenging to contain as they target network protocols such as TCP without overloading the system. Because of this, they are harder to detect as they are "integrated" with legitimate network traffic and are difficult to detect and report, and data for such attacks are harder to extract. Hence, the paper proposes a novel modular system architecture to detect such incidents with machine learning techniques. \citeA{4}
+
+The system detects such threats by utilizing two
+
+\subsubsection{ML-DDoSnet}
+
+IoT \cite{5}
+
+\section{Results}
 
 \subsection{TPAAD}
-According to the tests, the TPAAD system performs marvellously when it comes to the detection of the DDoS attacks. The system recorded a 99.56\% attack detection accuracy when testing with the CICDoS 2017 dataset on a controlled environment running on a Ubuntu VM on VMWare and a SDN setup created via Mininet and the RYU controller. \cite{3}
+According to the tests, the TPAAD system performs marvellously when it comes to the detection of DDoS attacks. The system recorded a 99.56\% accuracy on detecting DDoS attacks when testing with the CICDoS 2017 dataset on a controlled environment running on an Ubuntu VM on VMWare and an SDN setup created via Mininet and the RYU controller. \citeA{3}
 
 \section{Discussions}
-Discussion in a new paragraph.
+\subsection{Overview Of The Methods}
+\subsection{Analysis of Individual Methods}
+\subsubsection{TPAAD ???}
+\subsubsection{Flexible SDN-Based Architecture ??}
+\subsubsection{ML-DDoSnet}
+\subsubsection{errr continuee}
+\subsection{Contribution Of The Research}
 
 \section{Conclusion}
 % Discussions include but not limited to:
@@ -64,14 +90,12 @@ Discussion in a new paragraph.
 % \end{enumerate}
 %Conclusion of the work presented in the reviewed research papers.
 
-As of today, DDoS attacks are still a major concern for Internet network services, and the challenge of detection still remains. As such, this paper provides the information on how machine learning work, and the comparison between them to see which are the better choices for the detection of DDoS networks. 
+There are some pros and cons of such methods. For example, The TPAAD system records good accuracy in detecting threats while using minimal resources through efficient network filtering and traffic management. Also, the system can dynamically adjust to other threats to reduce disruptions. However, the system has the potential for delays due to the processing of traffic, as well as a highly complex system which increases the difficulty of deployment. Besides that, the system's reliability is highly dependent on dataset quality which could increase the false negatives of the system if an inadequate dataset is used. \citeA{3}
 
-There are some pros and cons of such methods used. For example, The TPAAD system has a good accuracy on detecting threats while using a low amount of resources by efficient network filtering and traffic management. Also, the system can dynamically adjust to other threats to reduce disruptions. However, the system has a potential for delays due to the processing of traffic, as well as a highly complex system which increases the difficulty of deployment. Besides that, the system's reliability is highly dependant on dataset quality which could increase the false negatives of the system if an inadequate dataset is used. \cite{3}
-
-Overall, its important that every problem has a solution, but the best solution depends on use case and other factors. Despite this, the integration of machine learning for such purposes will still need more work in order to have the best results, in a balanced approach that combines cost and performance in a equal way. As the field of cybersecurity and machine learning evolves, the collaboration of all parties involved will be crucial to maintaining our networks from DDoS attacks.  
+Every problem must have a solution, but the best solution depends on the use case and other factors. DDoS attacks are still a major concern for Internet network services, and the challenge remains. Despite this, machine learning will still need more work to have the best results in detecting threats, in a balanced approach that combines cost and performance equally. As the need for cybersecurity and machine learning evolves, the collaboration of all parties involved will be crucial to protecting our networks from DDoS attacks. 
 
 \section{Future work}
-Despite the work there are still some issues while facing the report. One suggestion for the report is 
+Despite the work, the report still faces some issues. One suggestion for the report is 
 
 %References
 \bibliographystyle{apacite}
