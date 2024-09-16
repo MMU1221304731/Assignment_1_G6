@@ -87,20 +87,14 @@ The methodology in this study focuses on using eight machine learning algorithms
 \subsection{GRU-LM and Word2vec}
 The study proposes a hybrid deep learning method to mitigate DDoS attacks in real-time within mobile networks using Word2vec and a Gated Recurrent Unit Language Model (GRU-LM). As seen in Figure \ref{fig:grus}, the model uses a simple two-gate structure where it could reduce system load. The method involves the use of Light Gradient Boosting Machine (LGBM) to detect DDoS attacks with 100\% accuracy. Natural language processing (NLP) techniques are used to enhance the model. Word2vec is used to embed Python source code, and GRU is used to predict the next word in the code sequence. Compared to conventional GRU and LSTM models, this method effectively reduces computational time and memory utilization, which makes it appropriate for real-time DDoS detection in mobile situations. \citeA{6}
 
-The pipeline for the system is shown below in Figure \ref{fig:3}
+The pipeline for the system is shown below in Figure \ref{fig:grus}
+
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{image.png}
-    \caption{Enter Caption}
+    \includegraphics[width=0.75\linewidth]{grus.png}
+    \caption{An overview of the GRU-LM architecture. \protect\citeA{6}}
     \label{fig:grus}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{image-pipe.png}
-    \caption{Pipeline used for the experiment. \protect\citeA{6}}
-    \label{fig:3}
 \end{figure}
 
 \clearpage
@@ -169,7 +163,7 @@ The research outcomes reveal that the utilised W2v-GRU\_LM hybrid deep learning 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{image.png}
+    \includegraphics[width=0.7\linewidth]{image-grulm.png}
     \caption{Accuracy results compared between the proposed model and various models tested \protect\citeA{6}}
     \label{fig:grulm}
 \end{figure}
